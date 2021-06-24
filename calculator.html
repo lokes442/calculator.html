@@ -1,0 +1,67 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <div  style ="
+            width: 150px;
+            height: 40px;
+            position: absolute;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;              
+            margin: auto;">
+
+
+            <form id="form1">   
+
+                <table>
+                 <input id="display" type="text" name="answer" >
+                                                            <br>    
+          <tr><input type="button" value="CE"  onclick="document.getElementById('display').value = ''"></input>  </tr>
+          <tr><input type="button" value="backspace" onclick="back().value ='back'"></input>
+    
+        <tr>
+            <td><input type="button" value="9" onclick="form1.answer.value += '9' "></input></td>
+            <td><input type="button" value="8" onclick="form1.answer.value += '8' "></input></td>
+            <td><input type="button" value="7" onclick="form1.answer.value += '7' "></input> </td>
+            <td> <input type="button" value="+"onclick="form1.answer.value +='+' "></input></td>
+        </tr>
+            <br>
+            <tr>
+           <td> <input type="button" value="6" onclick="form1.answer.value += '6' "></input></td>
+            <td><input type="button" value="5"onclick="form1.answer.value += '5' "></input></td>
+          <td>  <input type="button" value="4" onclick="form1.answer.value += '4' "></input></td>
+           <td> <input type="button" value="-" onclick="form1.answer.value += '-' "></input></td>
+        </tr>
+           <br>
+           <tr>
+            <td><input type="button" value="1" onclick="form1.answer.value += '1' "></input></td>
+           <td> <input type="button" value="2" onclick="form1.answer.value += '2' "></input></td>
+           <td> <input type="button" value="3" onclick="form1.answer.value += '3' "></input></td>
+           <td> <input type="button" value="*" onclick="form1.answer.value += '*' "></input></td>
+        </tr>
+           <br>
+           <tr>
+           <td><input type="button" value="." onclick="form1.answer.value += '.' "></input></td>
+           <td> <input type="button" value="0" onclick="form1.answer.value += '0' "></input></td>
+            <td><input type="button" value="=" onclick="form1.answer.value = eval(form1.answer.value)"></input> </td>
+           <td>  <input type="button" value="/" onclick="form1.answer.value += '/' "></input></td>
+
+        </tr>
+            </table>
+            </form>
+
+        </div>
+    </body>
+
+    <script>
+   var back = function(){
+  var index =document.getElementById('display').value;
+   document.getElementById('display').value=index.substring(0,index.length-1);
+   }
+  
+    </script>
+</html>
