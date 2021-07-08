@@ -1,54 +1,114 @@
 <html>
     <head>
+     <style>  
+     body{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #091921;
+    
+            }
+            body ::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+               z-index: -1;
+                background-image:linear-gradient(#4b6cff,#ff4de7) ;
+            clip-path: circle(25% at 80% 75%); 
+            
+             }   
+            body ::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(#e91e63,#ffc107) ;
+    clip-path: circle(25% at 20% 10%);
+    z-index: -1;
+    filter: blur(1px);
+            }
+          
+     .allinput{
+         background-color: #06c2cf;
+         border: none;
+         border-radius: 50%;
+     } 
+     .allinput:hover{
+         background-color: #b7b4bb;
+         
+     }       
+        table{
+            width: 140px;
+            padding: 0 0 0 15px;
 
+        } 
+       
+     </style>
     </head>
 
     <body>
-        <div  style ="
-            width: 150px;
-            height: 40px;
+       
+       
+       
+       <div  style ="
+            width: 180px;
+            height: 230px;
             position: absolute;
+            padding: 5px 5px 0 5px;      
             top:0;
             bottom: 0;
             left: 0;
             right: 0;              
-            margin: auto;">
+            margin: auto;
+            box-sizing: border-box;
+            border-radius: 10px;
+            border: solid 1px darkblue;
+            background-image:linear-gradient(#e345,#70a557);
+            ">
 
-
-            <form id="form1">   
+          
+            <form id="form1" >   
 
                 <table>
-                 <input id="display" type="text" name="answer" >
+          <input id="display" type="text"   onkeypress="return /[0-9]/i.test(event.key)" name="answer" style=" height :50px;"  >
+          
                                                             <br>    
-          <tr><input type="button" value="CE"  onclick="document.getElementById('display').value = ''"></input>  </tr>
-          <tr><input type="button" value="backspace" onclick="back().value ='back'"></input>
+          <td><input type="button" class="allinput" value="CE"  onclick="document.getElementById('display').value = '0'"></input>  </td>
+          <td><input type="button" class="allinput" value="bs" onclick="back().value ='back'"></input></td>
+         
     
-        <tr>
-            <td><input type="button" value="9" onclick="form1.answer.value += '9' "></input></td>
-            <td><input type="button" value="8" onclick="form1.answer.value += '8' "></input></td>
-            <td><input type="button" value="7" onclick="form1.answer.value += '7' "></input> </td>
-            <td> <input type="button" value="+"onclick="form1.answer.value +='+' "></input></td>
-        </tr>
+       <span> <tr>
+            <td><input type="button" class="allinput"value="9" onclick="form1.answer.value += '9' "></input></td>
+            <td><input type="button"class="allinput" value="8" onclick="form1.answer.value += '8' "></input></td>
+            <td><input type="button" class="allinput" value="7" onclick="form1.answer.value += '7' "></input> </td>
+            <td> <input type="button" class="allinput" value="+"onclick="form1.answer.value +='+' "></input></td>
+        </tr></span>
             <br>
             <tr>
-           <td> <input type="button" value="6" onclick="form1.answer.value += '6' "></input></td>
-            <td><input type="button" value="5"onclick="form1.answer.value += '5' "></input></td>
-          <td>  <input type="button" value="4" onclick="form1.answer.value += '4' "></input></td>
-           <td> <input type="button" value="-" onclick="form1.answer.value += '-' "></input></td>
+           <td> <input type="button" class="allinput" value="6" onclick="form1.answer.value += '6' "></input></td>
+            <td><input type="button" class="allinput"value="5"onclick="form1.answer.value += '5' "></input></td>
+          <td>  <input type="button" class="allinput" value="4" onclick="form1.answer.value += '4' "></input></td>
+           <td> <input type="button" class="allinput" value="-" onclick="form1.answer.value += '-' "></input></td>
         </tr>
            <br>
            <tr>
-            <td><input type="button" value="1" onclick="form1.answer.value += '1' "></input></td>
-           <td> <input type="button" value="2" onclick="form1.answer.value += '2' "></input></td>
-           <td> <input type="button" value="3" onclick="form1.answer.value += '3' "></input></td>
-           <td> <input type="button" value="*" onclick="form1.answer.value += '*' "></input></td>
+            <td><input type="button" class="allinput" value="1" onclick="form1.answer.value += '1' "></input></td>
+           <td> <input type="button" class="allinput" value="2" onclick="form1.answer.value += '2' "></input></td>
+           <td> <input type="button" class="allinput" value="3" onclick="form1.answer.value += '3' "></input></td>
+           <td> <input type="button" class="allinput" value="*" onclick="form1.answer.value += '*' "></input></td>
         </tr>
            <br>
            <tr>
-           <td><input type="button" value="." onclick="form1.answer.value += '.' "></input></td>
-           <td> <input type="button" value="0" onclick="form1.answer.value += '0' "></input></td>
-            <td><input type="button" value="=" onclick="form1.answer.value = eval(form1.answer.value)"></input> </td>
-           <td>  <input type="button" value="/" onclick="form1.answer.value += '/' "></input></td>
+           <td><input type="button" class="allinput" value="." onclick="form1.answer.result.value += '.' "></input></td>
+           <td> <input type="button" class="allinput" value="0" onclick="form1.answer.value += '0' "></input></td>
+            <td><input type="button" class="allinput" value="=" onclick="form1.answer.value = eval(form1.answer.value)"></input> </td>
+           <td>  <input type="button" class="allinput" value="/" onclick="form1.answer.value += '/' "></input></td>
 
         </tr>
             </table>
@@ -62,6 +122,5 @@
   var index =document.getElementById('display').value;
    document.getElementById('display').value=index.substring(0,index.length-1);
    }
-  
-    </script>
+   </script>
 </html>
